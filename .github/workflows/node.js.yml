@@ -29,7 +29,9 @@ jobs:
     - name: Install dependencies
       run: yarn
       working-directory: ./src
-    - run: yarn ci
+    - run: yarn ci --if-present
+      working-directory: ./src
     - run: yarn run build --if-present
+      working-directory: ./src
     - run: yarn test
       working-directory: ./src
