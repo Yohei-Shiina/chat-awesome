@@ -33,5 +33,5 @@ jobs:
       working-directory: ./src
     - run: yarn ci
     - run: yarn run build --if-present
-    - run: yarn src/test
+    - run: yarn test
       working-directory: ./src
