@@ -29,5 +29,5 @@ jobs:
     - name: Install dependencies
       run: yarn
       working-directory: ./src
-    - run: yarn test
+    - run: jest
       working-directory: ./src
