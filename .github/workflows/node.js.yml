@@ -30,6 +30,8 @@ jobs:
         cache-dependency-path: ./workspace/src/yarn.lock
     - name: Install dependencies
       run: yarn
+      working-directory: ./src
     - run: yarn ci
     - run: yarn run build --if-present
-    - run: yarn test
+    - run: yarn src/test
+      working-directory: ./src
