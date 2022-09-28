@@ -27,5 +27,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install dependencies
-      run: npm install
-    - run: npx jest
+      run: yarn
+    - run: yarn test
