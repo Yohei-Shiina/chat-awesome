@@ -7,7 +7,7 @@ services:
     container_name: app_container
     build: . # relative path to Dockerfile
     volumes:
-      - .:/workspace
+      - .:/workspace:cached
       - node_modules:/workspace/src/node_modules
     ports:
       - "3000:3000"
