@@ -1,8 +1,13 @@
 import React, { ReactNode } from "react"
 import { AuthenticationLayer } from "../Authentication/AuthenticationLayer"
 
-export const BasicLayout = ({ children }:{children: ReactNode}): JSX.Element => {
-  return (
+type Props = {
+  children: ReactNode
+}
+export const BasicLayout = ({ children }: Props): JSX.Element => {
+  return process.env.NODE_ENV !== 'development' ? (
+    <p>Authentication is currently disabled in production mode</p>
+  ) : (
     <AuthenticationLayer>
       { children }
     </AuthenticationLayer>
