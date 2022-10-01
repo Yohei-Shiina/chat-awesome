@@ -6,7 +6,10 @@ type Props = {
 }
 export const BasicLayout = ({ children }: Props): JSX.Element => {
   return process.env.NODE_ENV !== 'development' ? (
-    <p>Authentication is currently disabled in production mode</p>
+    <>
+      <p>Authentication is currently disabled in production mode</p>
+      { children }
+    </>
   ) : (
     <AuthenticationLayer>
       { children }
