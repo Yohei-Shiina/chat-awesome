@@ -24,5 +24,13 @@ services:
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
 
+  mongo:
+    image: mongo:5.0
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    volumes:
+      - /data/db
+
 volumes:
   node_modules:
