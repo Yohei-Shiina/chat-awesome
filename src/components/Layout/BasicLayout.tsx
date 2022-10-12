@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react"
-import { AuthenticationLayer } from "../Authentication/AuthenticationLayer"
+import { AuthenticationLayer } from '~/components/Authentication/AuthenticationLayer';
 
 type Props = {
   children: ReactNode
