@@ -3,5 +3,6 @@ export type IUser = {
   name: string
   email: string
   image: string
+  lastLoginAt: Date
   createdAt: Date
 }

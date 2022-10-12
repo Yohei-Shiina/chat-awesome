@@ -37,13 +37,15 @@ export const authOptions: NextAuthOptions = {
 
         if (doc == null) {
           const newUser = await User.create(user);
+          await newUser.updateLastLoginAt(new Date());
         }
         else {
-          //
+          await doc.updateLastLoginAt(new Date());
         }
       }
       catch (err) {
         console.error(err);
+        return false;
       }
 
       return true;
