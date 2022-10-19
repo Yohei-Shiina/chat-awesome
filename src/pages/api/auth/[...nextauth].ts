@@ -1,6 +1,9 @@
 import NextAuth, { NextAuthOptions } from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 
+import connectMongo from "~/libs/connectMongo";
+import User from '~/models/user';
+
 export const authOptions: NextAuthOptions = {
   // Configure one or more authentication providers
   providers: [
@@ -19,11 +22,30 @@ export const authOptions: NextAuthOptions = {
       }
       return token;
     },
+    
     async session({ session, token, user }) {
       // Send properties to the client, like an access_token from a provider.
       session.accessToken = token.accessToken;
       return session;
-    }
+    },
+
+    async signIn({ user }) {
+      try {
+        await connectMongo();
+
+        // Signup
+        const doc = await User.findOne({ id: user.id });
+        if (doc == null) {
+          await User.create(user);
+        }
+      }
+      catch (err) {
+        console.error(err);
+        return false;
+      }
+
+      return true;
+    },
   }
 }
 export default NextAuth(authOptions)
