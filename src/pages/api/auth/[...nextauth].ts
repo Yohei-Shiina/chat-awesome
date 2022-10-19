@@ -33,14 +33,10 @@ export const authOptions: NextAuthOptions = {
       try {
         await connectMongo();
 
+        // Signup
         const doc = await User.findOne({ id: user.id });
-
         if (doc == null) {
-          const newUser = await User.create(user);
-          await newUser.updateLastLoginAt(new Date());
-        }
-        else {
-          await doc.updateLastLoginAt(new Date());
+          await User.create(user);
         }
       }
       catch (err) {
