@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document, Model, models } from "mongoose"; 
 
-import { IUser } from '~/types/user';
+import { IUser } from '~/interfaces/user';
 
 export interface UserDocument extends Document {
   id: string // Not MongoDB ObjectId
