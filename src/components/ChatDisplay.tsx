@@ -3,7 +3,7 @@ import { Message } from "~/interfaces/Message";
 import { ChatMessage } from "./ChatMessage";
 
 type ChatDisplayProps = {
-  messages: (Message & { id: number })[];
+  messages: Message[];
 };
 
 export const ChatDisplay = (props: ChatDisplayProps): JSX.Element => {
