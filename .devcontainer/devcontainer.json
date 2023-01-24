@@ -33,7 +33,8 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"eamodio.gitlens"
+		"eamodio.gitlens",
+		"mhutchie.git-graph"
 	],
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
