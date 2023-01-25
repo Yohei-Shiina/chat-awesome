@@ -17,22 +17,19 @@ const Chat: NextPage<Props> = ({ messages }) => {
 export async function getServerSideProps(context: any) {
   const messages = [
     {
-      id: 1,
       sender: "Stranger",
       message: "Hello World",
-      timestamp: "2023/1/24/23:52",
+      timestamp: new Date().toString(),
     },
     {
-      id: 2,
       sender: "Stranger",
       message: "This chat is awesome!",
-      timestamp: "2023/1/24/23:52",
+      timestamp: new Date().toString(),
     },
     {
-      id: 3,
       sender: "Founder",
       message: "This is the future",
-      timestamp: "2023/1/25/00:00",
+      timestamp: new Date().toString(),
     },
   ];
 
