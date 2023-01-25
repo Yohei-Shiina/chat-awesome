@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import React, { useState } from "react";
 import { Message } from "~/interfaces/Message";
 import { ChatForm } from "./ChatForm";
@@ -9,12 +10,15 @@ interface ChatDisplayProps {
 
 export const ChatDisplay = (props: ChatDisplayProps): JSX.Element => {
   const { messages: initialMessages } = props;
+  const { data: session } = useSession();
 
   const [chatMessages, setChatMessages] = useState(initialMessages);
 
   const onSendMessage = (message: string) => {
+    const sender = session?.user?.name || "Stranger";
+
     const newMessage = {
-      sender: "Stranger",
+      sender: sender,
       message: message,
       timestamp: new Date().toString(),
     };
