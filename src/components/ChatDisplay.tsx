@@ -39,7 +39,7 @@ export const ChatDisplay = (props: ChatDisplayProps): JSX.Element => {
           );
         })}
       </ul>
-      <ChatForm onSendMessage={onSendMessage} />;
+      <ChatForm onSendMessage={onSendMessage} />
     </div>
   );
 };
