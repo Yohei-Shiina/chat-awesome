@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { ChatDisplay } from "~/components/ChatDisplay";
+import { BasicLayout } from "~/components/Layout/BasicLayout";
 import { Message } from "~/interfaces/Message";
 
 interface Props {
@@ -8,9 +9,9 @@ interface Props {
 
 const Chat: NextPage<Props> = ({ messages }) => {
   return (
-    <div>
+    <BasicLayout>
       <ChatDisplay messages={messages} />
-    </div>
+    </BasicLayout>
   );
 };
 
