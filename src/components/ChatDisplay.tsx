@@ -27,18 +27,16 @@ export const ChatDisplay = (props: ChatDisplayProps): JSX.Element => {
 
   return (
     <div className="chat-display">
-      <ul>
-        {chatMessages.map((message, index) => {
-          return (
-            <ChatMessage
-              key={index} // Temporary key
-              sender={message.sender}
-              message={message.message}
-              timestamp={message.timestamp}
-            />
-          );
-        })}
-      </ul>
+      {chatMessages.map((message, index) => {
+        return (
+          <ChatMessage
+            key={index} // Temporary key
+            sender={message.sender}
+            message={message.message}
+            timestamp={message.timestamp}
+          />
+        );
+      })}
       <ChatForm onSendMessage={onSendMessage} />
     </div>
   );
