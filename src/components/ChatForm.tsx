@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "@chakra-ui/react";
 
 interface ChatFormProps {
   onSendMessage: (string: string) => void;
@@ -24,7 +25,9 @@ export const ChatForm: React.FC<ChatFormProps> = (props): JSX.Element => {
         }}
         placeholder="Type your message here..."
       />
-      <input type="submit" value="Send" />
+      <Button type="submit" colorScheme="blue">
+        Button
+      </Button>
     </form>
   );
 };
