@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Textarea } from "@chakra-ui/react";
+import { FormControl, Textarea } from "@chakra-ui/react";
 
 interface ChatFormProps {
   onSendMessage: (string: string) => void;
@@ -22,16 +22,16 @@ export const ChatForm: React.FC<ChatFormProps> = (props): JSX.Element => {
     setMessage("");
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <FormControl onSubmit={handleSubmit}>
       <Textarea
         value={message}
         onChange={(e) => {
           setMessage(e.target.value);
         }}
-        placeholder="Type your message"
+        placeholder="Type your message. Press cmd + Enter to send it"
         size="sm"
         onKeyDown={handleKeyPress}
       />
-    </form>
+    </FormControl>
   );
 };
